@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Python logo">
+  <rect x="12" y="8" width="52" height="52" rx="20" fill="#3776AB"/>
+  <rect x="36" y="40" width="52" height="52" rx="20" fill="#FFD43B"/>
+  <circle cx="30" cy="26" r="5" fill="#fff"/>
+  <circle cx="70" cy="74" r="5" fill="#3776AB"/>
+</svg>

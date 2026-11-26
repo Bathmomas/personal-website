@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="SQL database icon">
+  <path d="M16 20v60c0 7 15 12 34 12s34-5 34-12V20z" fill="#00758F"/>
+  <path d="M16 40c0 7 15 12 34 12s34-5 34-12M16 60c0 7 15 12 34 12s34-5 34-12" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+  <ellipse cx="50" cy="20" rx="34" ry="12" fill="#00A3C4"/>
+</svg>

@@ -1,0 +1,401 @@
+/* Colors  */
+:root {
+    --orange: #FE6900;        /* accent color */
+    --orange-dark: #C25100;   /* darker orange: readable for text links on white */
+    --brown: #55473E;         /* main dark color */
+    --tint: #FFF4EA;          /* very light tint for alternating sections */
+    --white: #FFFFFF;
+}
+
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--brown);
+    background: var(--white);
+}
+
+a { color: var(--orange-dark); }
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*  Header  */
+#site-header {
+    background: var(--white);
+    padding: 1.25rem 2rem;
+    border-bottom: 4px solid var(--orange);
+}
+
+#site-header h1 {
+    margin: 0;
+    color: var(--brown);
+    font-size: 2rem;
+}
+
+#tagline {
+    margin: 0.25rem 0 0;
+    color: var(--orange-dark);
+    font-weight: bold;
+}
+
+/* Navigation  */
+#main-nav {
+    background: var(--brown);
+    padding: 0.75rem 2rem;
+}
+
+#main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;   
+    gap: 0.5rem 1.5rem;
+}
+
+#main-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#main-nav a:hover,
+#main-nav a:focus {
+    color: var(--orange);
+}
+
+
+section {
+    padding: 2rem;
+}
+
+section h2 {
+    color: var(--brown);
+    border-bottom: 3px solid var(--orange);
+    display: inline-block;
+    padding-bottom: 0.25rem;
+}
+
+#home     { background: var(--tint); }
+#about    { background: var(--white); }
+#skills   { background: var(--tint); }
+#projects { background: var(--white); }
+#contact  { background: var(--tint); }
+
+
+/* About: photo + text side by side (flexbox */
+.about-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.profile-photo {
+    flex: 0 0 280px;        
+    width: 280px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 4px solid var(--orange);
+}
+
+.about-text {
+    flex: 1;                  
+}
+
+.about-text p:first-child {
+    margin-top: 0;
+}
+
+
+/*Skills and project cards*/
+.card-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 1rem;
+}
+#skills .card-list li h3 {
+    background: var(--white);
+   /*border-left: 5px solid var(--orange);*/
+    /*padding: 0.9rem 1rem;*/
+    color: var(--brown);
+    font-weight: bold;
+}
+#skills .card-list li {
+    background: var(--white);
+    border-left: 5px solid var(--orange);
+    padding: 0.9rem 1rem;
+    /*font-weight: bold;*/
+}
+
+/* Skills logo grid */
+.skills-subheading {
+    margin: 1.5rem 0 0.75rem;
+    color: var(--brown);
+}
+
+.skills-grid {
+    list-style: none;
+    margin: 0 0 2rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1rem;
+}
+
+.skills-grid li {
+    background: var(--white);
+    border-bottom: 5px solid var(--orange);
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.skills-grid img {
+    width: 80px;
+    height: 80px;
+}
+
+.skills-grid span {
+    font-weight: bold;
+    color: var(--brown);
+}
+
+.card {
+    background: var(--tint);
+    border-left: 5px solid var(--orange);
+    padding: 1rem;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.contact-info {
+        display: flex;
+        flex-wrap:wrap;
+        gap: 1rem 3rem;
+        flex-direction: row;
+    }
+
+#site-footer {
+    background: var(--brown);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    border-top: 4px solid var(--orange);
+}
+
+
+@media (min-width: 600px) and (max-width: 1024px) {
+
+}
+
+@media (max-width: 599px) {
+
+}
+
+
+
+
+/* ---- 60%: skill logos flip upside down on hover ---- */
+.skills-grid img {
+    transition: transform 0.6s ease;
+}
+
+.skills-grid li:hover img,
+.skills-grid li:focus-within img {
+    transform: rotate(180deg);
+}
+
+
+/* ---- 80%: Easter egg - hover (or tab to) the (c) in the footer ---- */
+.egg {
+    position: relative;
+    display: inline-block;
+    padding: 0 0.4rem;
+    cursor: default;
+}
+
+.egg-pop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 5rem;
+    margin: 0 auto;
+    width: 180px;
+    text-align: center;
+    opacity: 0;               /* hidden until the animation runs */
+    pointer-events: none;
+    z-index: 1001;
+}
+
+.egg-pop img {
+    display: block;
+    width: 180px;
+    height: auto;
+    border: 4px solid var(--orange);
+    border-radius: 8px;
+    background: var(--white);
+}
+
+.egg-caption {
+    display: block;
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--white);
+    color: var(--brown);
+    font-weight: bold;
+    border: 3px solid var(--orange);
+    border-radius: 999px;
+}
+
+.egg:hover .egg-pop,
+.egg:focus .egg-pop {
+    animation: egg-pop 3.5s ease-in-out forwards;
+}
+
+/* picture pops in, stays a moment, then fades away */
+@keyframes egg-pop {
+    0%   { opacity: 0; transform: translateY(40px) scale(0.3) rotate(-12deg); }
+    12%  { opacity: 1; transform: translateY(0) scale(1.1) rotate(4deg); }
+    18%  { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+    80%  { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+    100% { opacity: 0; transform: translateY(-20px) scale(0.8); }
+}
+
+
+/* ---- 100%: Easter egg - click "A.K.A Mercy" to release a bouncing, rolling ball ---- */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+#tagline label {
+    cursor: pointer;
+}
+
+/* show a focus ring on the label when the hidden checkbox is focused by keyboard */
+body:has(#ball-toggle:focus-visible) #tagline label {
+    outline: 3px solid var(--orange);
+    outline-offset: 3px;
+}
+
+.ball-track {
+    display: none;            /* ball is hidden until the checkbox is ticked */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    z-index: 1000;
+    pointer-events: none;     /* never blocks clicks on the page */
+}
+
+#ball-toggle:checked ~ .ball-track {
+    display: block;
+}
+
+/* moves left <-> right across the screen */
+.ball-run {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 64px;
+    height: 0;
+    animation: ball-run 5s linear infinite alternate;
+}
+
+/* bounces up and down (with a little squash when it hits the ground) */
+.ball-bounce {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 64px;
+    height: 64px;
+    transform-origin: bottom center;
+    animation: ball-bounce 1.2s infinite;
+}
+
+/* shiny highlight stays still while the ball spins underneath */
+.ball-bounce::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 14px;
+    width: 16px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.65);
+    transform: rotate(-30deg);
+}
+
+/* the ball itself is drawn with CSS only */
+.ball {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 3px solid var(--brown);
+    background: conic-gradient(
+        var(--orange) 0deg 90deg,
+        var(--white)  90deg 180deg,
+        var(--brown)  180deg 270deg,
+        var(--tint)   270deg 360deg
+    );
+    animation: ball-spin 5s linear infinite alternate;
+}
+
+/* soft shadow on the ground that shrinks as the ball rises */
+.ball-shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 64px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    animation: ball-shadow 1.2s infinite;
+}
+
+@keyframes ball-run {
+    from { left: 0; }
+    to   { left: calc(100% - 64px); }
+}
+
+@keyframes ball-bounce {
+    0%   { transform: translateY(0) scale(1.25, 0.75);
+           animation-timing-function: cubic-bezier(0.2, 0.8, 0.4, 1); }
+    50%  { transform: translateY(-220px) scale(1, 1);
+           animation-timing-function: cubic-bezier(0.6, 0, 0.8, 0.2); }
+    100% { transform: translateY(0) scale(1.25, 0.75); }
+}
+
+@keyframes ball-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(1440deg); }
+}
+
+@keyframes ball-shadow {
+    0%, 100% { transform: scale(1.2); opacity: 0.35; }
+    50%      { transform: scale(0.5); opacity: 0.12; }
+}
